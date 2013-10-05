@@ -1,0 +1,18 @@
+[submodule "js2-mode"]
+	path = js2-mode
+	url = git@github.com:mooz/js2-mode.git
+[submodule "ESS"]
+	path = ESS
+	url = git@github.com:emacs-ess/ESS.git
+[submodule "multiple-cursors.el"]
+	path = multiple-cursors.el
+	url = git@github.com:magnars/multiple-cursors.el.git
+[submodule "emacs-flymake"]
+	path = emacs-flymake
+	url = git@github.com:illusori/emacs-flymake.git
+[submodule "autopair"]
+	path = autopair
+	url = git@github.com:capitaomorte/autopair.git
+[submodule "yaml-mode"]
+	path = yaml-mode
+	url = git@github.com:yoshiki/yaml-mode.git
