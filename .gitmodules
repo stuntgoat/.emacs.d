@@ -16,3 +16,15 @@
 [submodule "yaml-mode"]
 	path = yaml-mode
 	url = git@github.com:yoshiki/yaml-mode.git
+[submodule "jshint-mode"]
+	path = jshint-mode
+	url = git@github.com:daleharvey/jshint-mode.git
+[submodule "magit"]
+	path = magit
+	url = git@github.com:magit/magit.git
+[submodule "yasnippet"]
+	path = yasnippet
+	url = https://github.com/capitaomorte/yasnippet
+[submodule "bm"]
+	path = bm
+	url = git://github.com/joodland/bm.git
