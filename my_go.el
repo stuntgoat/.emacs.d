@@ -14,6 +14,10 @@
 	  (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
 (add-hook 'go-mode-hook
 	  (lambda () (setq tab-width 4)))
+(add-hook 'go-mode-hook
+          (lambda () (autopair-mode)))
+(add-hook 'go-mode-hook
+          (lambda () (show-paren-mode)))
 
 (fset 'ig-go-Println
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([24 81 1 11 return 102 109 116 46 80 114 105 110 116 108 110 40 34 34 41 2 2 25 6] 0 "%d")) arg)))
