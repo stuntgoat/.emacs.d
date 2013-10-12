@@ -1,7 +1,7 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;; Python 
+;;;; Python
 (add-to-list 'load-path "~/.emacs.d/flymake-python")
 
 ; python macros
@@ -33,23 +33,22 @@
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("\353
 \355" 0 "%d")) arg)))
 
-(fset 'ig-py-comment-copy-line
-   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("l
-" 0 "%d")) arg)))
+;;; created with autopair mode
+(fset 'ig-python-print-var
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("Qprint(\": %s % " 0 "%d")) arg)))
 
-
-
+(fset 'ig-py-set-trace
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("import pdb; pdb.set_trace()" 0 "%d")) arg)))
 
 (define-key python-mode-map "\M-k" 'line-to-kill-ring)
 (define-key python-mode-map "\C-h" 'comment-line-python)
 (define-key python-mode-map "\C-j" 'uncomment-line-python)
 (define-key python-mode-map "\M-r" 'replace-string)
 
-
-; (define-key python-mode-map (kbd "C-S-f") 'uncomment-line-python)
+(define-key python-mode-map (kbd "C-c b") 'ig-py-set-trace)
 (define-key python-mode-map (kbd "C-S-f") 'ig-py-raise-Exception)
 (define-key python-mode-map (kbd "C-c q") 'ig-py-comment-object)
-(define-key python-mode-map (kbd "C-c C-p") 'ig-python-main-statement)
+(define-key python-mode-map (kbd "C-c C-p") 'ig-python-print-var)
 (define-key python-mode-map (kbd "C-c t") 'ig-py-TODO)
 (define-key python-mode-map (kbd "C-c d") 'ig-py-debug-line)
 
@@ -57,9 +56,9 @@
 (define-key python-mode-map (kbd "C-c l") 'ig-py-copy-line-paste-below)
 (define-key python-mode-map (kbd "C-c C-l") 'ig-py-comment-copy-line)
 
+;;;; Hooks
 (add-hook 'python-mode-hook
 	  (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
-
 
 (add-hook 'python-mode-hook
 	  (lambda () (camelCase-mode 1)))
@@ -67,12 +66,14 @@
 (add-hook 'python-mode-hook
 	  (lambda () (flymake-mode)))
 
-
 (add-hook 'python-mode-hook
 	  (lambda () (linum-mode)))
 
-(add-hook 'python-mode-hook
-	  (lambda () (setq show-paren-mode t)))
+(add-hook 'go-mode-hook
+          (lambda () (autopair-mode)))
+
+(add-hook 'go-mode-hook
+          (lambda () (show-paren-mode)))
 
 (add-hook 'python-mode-hook
 	  (lambda () (setq-default indent-tabs-mode nil)))
@@ -80,7 +81,7 @@
 (setq python-check-command "/Library/Frameworks/Python.framework/Versions/2.7/bin/pyflakes")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; flymake mode 
+;; flymake mode
 (when (load "flymake" t)
   (defun flymake-pyflakes-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
