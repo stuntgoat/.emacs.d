@@ -30,17 +30,22 @@
 (require 'go-mode)
 
 (require 'my_flymake)
+
 (require 'my_go)
 
 (require 'my_python)
 
+(require 'my_ess)
+
 (require 'my_macros)
 
 (require 'my_js2)
+
+(load "~/.emacs.d/rust-mode.el")
+(require 'rust-mode)
 
 (if
     (equal MY_ENVIRONMENT "work")
     (require 'my_work))
 
 (provide 'my_reqs)
-

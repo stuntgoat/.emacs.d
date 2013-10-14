@@ -35,10 +35,12 @@
 
 ;;; created with autopair mode
 (fset 'ig-python-print-var
-   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("Qprint(\": %s % " 0 "%d")) arg)))
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([24 81 1 11 return 112 114 105 110 116 32 34 25 58 32 37 115 6 32 37 32 25] 0 "%d")) arg)))
+(define-key python-mode-map (kbd "C-c C-p") 'ig-python-print-var)
 
 (fset 'ig-py-set-trace
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("import pdb; pdb.set_trace()" 0 "%d")) arg)))
+
 
 (define-key python-mode-map "\M-k" 'line-to-kill-ring)
 (define-key python-mode-map "\C-h" 'comment-line-python)
@@ -48,12 +50,12 @@
 (define-key python-mode-map (kbd "C-c b") 'ig-py-set-trace)
 (define-key python-mode-map (kbd "C-S-f") 'ig-py-raise-Exception)
 (define-key python-mode-map (kbd "C-c q") 'ig-py-comment-object)
-(define-key python-mode-map (kbd "C-c C-p") 'ig-python-print-var)
 (define-key python-mode-map (kbd "C-c t") 'ig-py-TODO)
 (define-key python-mode-map (kbd "C-c d") 'ig-py-debug-line)
 
 ;; convenience macros
 (define-key python-mode-map (kbd "C-c l") 'ig-py-copy-line-paste-below)
+
 (define-key python-mode-map (kbd "C-c C-l") 'ig-py-comment-copy-line)
 
 ;;;; Hooks
@@ -69,10 +71,10 @@
 (add-hook 'python-mode-hook
 	  (lambda () (linum-mode)))
 
-(add-hook 'go-mode-hook
+(add-hook 'python-mode-hook
           (lambda () (autopair-mode)))
 
-(add-hook 'go-mode-hook
+(add-hook 'python-mode-hook
           (lambda () (show-paren-mode)))
 
 (add-hook 'python-mode-hook
