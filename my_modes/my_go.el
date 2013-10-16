@@ -38,6 +38,13 @@
 (fset 'ig-go-curlybrace-pair-newline
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote (" {" 0 "%d")) arg)))
 
+(fset 'ig-go-err-not-nil
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("if err != nil {" 0 "%d")) arg)))
+(define-key go-mode-map (kbd "C-c C-e") 'ig-go-err-not-nil)
+
+(fset 'ig-go-alloc-assignment-from-assignment
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("\355=:" 0 "%d")) arg)))
+(define-key go-mode-map (kbd "C-+") 'ig-go-alloc-assignment-from-assignment)
 
 ;; go-mode-map
 (define-key go-mode-map "\M-k" 'line-to-kill-ring)
