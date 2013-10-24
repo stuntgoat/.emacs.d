@@ -1,5 +1,6 @@
+(load "~/.emacs.d/.environ")
 
-(setq MY_ENVIRONMENT "home")
+
 ;(setq MY_ENVIRONMENT "work")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -139,9 +140,9 @@
  '(ido-default-buffer-method (quote selected-window))
  '(ido-default-file-method (quote selected-window))
  '(ido-enable-flex-matching t)
- '(markdown-command "/usr/local/bin/markdown")
- '(python-guess-indent t)
- '(python-indent 4)
+ '(markdown-command "/usr/local/bin/markdown" t)
+ '(python-indent-guess-indent-offset t)
+ '(python-indent-offset 4)
  '(python-python-command "/Library/Frameworks/Python.framework/Versions/2.7/bin/python")
  '(scroll-conservatively 101)
  '(scroll-step 0)
@@ -155,5 +156,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#2b2b2b" :foreground "#ffa500" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "apple" :family "Courier_New"))))
+ '(flymake-errline ((t (:background "red3" :foreground "Black"))))
  '(font-lock-comment-face ((((class color) (min-colors 88) (background dark)) (:foreground "red3"))))
  '(font-lock-string-face ((((class color) (min-colors 88) (background dark)) (:foreground "CadetBlue1")))))
