@@ -84,6 +84,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; flymake mode
+(setq PYCHECK_SCRIPT (concat DOT_EMACS_DOT_D_DIR "/bash/pycheck.sh"))
+
 (when (load "flymake" t)
   (defun flymake-pyflakes-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
@@ -91,7 +93,10 @@
 	   (local-file (file-relative-name
 			temp-file
 			(file-name-directory buffer-file-name))))
-      (list "/Library/Frameworks/Python.framework/Versions/2.7/bin/pyflakes" (list local-file))))
+;;      (list "/Library/Frameworks/Python.framework/Versions/2.7/bin/pyflakes" (list local-file))
+
+      (list PYCHECK_SCRIPT (list local-file))
+      ))
   (add-to-list 'flymake-allowed-file-name-masks
 	       '("\\.py\\'" flymake-pyflakes-init)))
 

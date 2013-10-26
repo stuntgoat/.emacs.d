@@ -1,3 +1,5 @@
+(setq DOT_EMACS_DOT_D_DIR "~/.emacs.d")
+
 (load "~/.emacs.d/.environ")
 
 

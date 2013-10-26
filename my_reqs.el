@@ -24,7 +24,15 @@
 (load "~/.emacs.d/autopair/autopair.el")
 (require 'autopair)
 
+;; (require 'git)
+(load "/Users/isaac/src/git/contrib/emacs/git.el")
+(load "/Users/isaac/src/git/contrib/emacs/git-blame.el")
+(require 'git)
+
+(require 'magit)
+
 (require 'line-num)
+
 
 (require 'python)
 (require 'go-mode)
@@ -40,6 +48,8 @@
 (require 'my_macros)
 
 (require 'my_js2)
+
+
 
 (load "~/.emacs.d/rust-mode.el")
 (require 'rust-mode)
