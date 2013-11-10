@@ -25,8 +25,9 @@
 (require 'autopair)
 
 ;; (require 'git)
-(load "/Users/isaac/src/git/contrib/emacs/git.el")
-(load "/Users/isaac/src/git/contrib/emacs/git-blame.el")
+
+(load "~/src/git/contrib/emacs/git.el")
+(load "~/src/git/contrib/emacs/git-blame.el")
 (require 'git)
 
 (require 'magit)
