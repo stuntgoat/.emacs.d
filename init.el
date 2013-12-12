@@ -70,6 +70,14 @@
 (global-set-key (kbd "C-S-l") 'windmove-right)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; control u to delete charbackwards; control U to delete word backwards
+(global-set-key (kbd "C-u") 'delete-backward-char)
+(global-set-key (kbd "C-S-u") 'camelCase-backward-kill-word)
+(global-set-key (kbd "C-c u") 'universal-argument)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; Yaml mode
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
