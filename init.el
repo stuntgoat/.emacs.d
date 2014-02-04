@@ -188,3 +188,4 @@
  '(flymake-errline ((t (:background "red3" :foreground "Black"))))
  '(font-lock-comment-face ((((class color) (min-colors 88) (background dark)) (:foreground "red3"))))
  '(font-lock-string-face ((((class color) (min-colors 88) (background dark)) (:foreground "CadetBlue1")))))
+(put 'narrow-to-region 'disabled nil)

@@ -24,3 +24,10 @@
 
 (global-set-key "\C-xQ" 'my-macro-query)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;; swap single and double quotes
+(fset 'ig-swap-quotes
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([24 110 110 134217842 39 return 68 79 85 S-backspace S-backspace S-backspace 83 73 78 71 76 69 36 return 24 104 134217842 34 return 68 79 85 66 76 69 83 S-backspace 36 return 24 104 134217842 68 79 85 66 76 69 36 return 39 return 24 104 134217842 83 73 78 71 76 69 36 return 34 return 24 110 119] 0 "%d")) arg)))
+
+(global-set-key "\C-cS" 'ig-swap-quotes)
