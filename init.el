@@ -1,4 +1,10 @@
 (setq DOT_EMACS_DOT_D_DIR "~/.emacs.d")
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(setq inhibit-splash-screen t)
+(setq inhibit-startup-message t)
+
+;(set-frame-parameter nil 'fullscreen 'fullboth)
 
 (load "~/.emacs.d/.environ")
 
@@ -62,6 +68,9 @@
 					; org-metaright
 	    (local-set-key "\M-\S-h" 'org-metaleft)))
 
+;; For syntax highlighting inline
+(setq org-src-fontify-natively t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; moving between windows
 (global-set-key (kbd "C-S-j") 'windmove-down)
@@ -71,8 +80,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; control u to delete charbackwards; control U to delete word backwards
-(global-set-key (kbd "C-u") 'delete-backward-char)
-(global-set-key (kbd "C-S-u") 'camelCase-backward-kill-word)
+(global-set-key (kbd "C-u") 'camelCase-backward-kill-word)
+(global-set-key (kbd "C-S-u") 'delete-backward-char)
 (global-set-key (kbd "C-c u") 'universal-argument)
 
 
@@ -152,17 +161,21 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(display-time-mode t)
  '(flymake-no-changes-timeout 0.5)
  '(ido-default-buffer-method (quote selected-window))
  '(ido-default-file-method (quote selected-window))
  '(ido-enable-flex-matching t)
  '(markdown-command "/usr/local/bin/markdown" t)
+ '(menu-bar-mode nil)
  '(python-indent-guess-indent-offset t)
  '(python-indent-offset 4)
  '(python-python-command "/Library/Frameworks/Python.framework/Versions/2.7/bin/python")
  '(scroll-conservatively 101)
  '(scroll-step 0)
+ '(show-paren-mode t)
  '(tool-bar-mode nil)
+ '(tooltip-mode nil)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
 
 

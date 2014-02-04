@@ -21,8 +21,8 @@
 (load "~/.emacs.d/camelCase-mode.el")
 (require 'camelCase)
 
-(load "~/.emacs.d/autopair/autopair.el")
-(require 'autopair)
+;; (load "~/.emacs.d/autopair/autopair.el")
+;; (require 'autopair)
 
 ;; (require 'git)
 
@@ -36,6 +36,7 @@
 
 
 (require 'python)
+
 (require 'go-mode)
 
 (require 'my_flymake)
@@ -50,6 +51,10 @@
 
 (require 'my_js2)
 
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((python . t)))
+
 
 
 (load "~/.emacs.d/rust-mode.el")
@@ -60,3 +65,7 @@
     (require 'my_work))
 
 (provide 'my_reqs)
+
+(require 'package)
+(add-to-list 'package-archives
+  '("melpa" . "http://melpa.milkbox.net/packages/") t)

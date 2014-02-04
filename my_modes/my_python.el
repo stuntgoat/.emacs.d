@@ -33,10 +33,10 @@
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("\353
 \355" 0 "%d")) arg)))
 
-;;; created with autopair mode
-(fset 'ig-python-print-var
-   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([24 81 1 11 return 112 114 105 110 116 32 34 25 58 32 37 115 6 32 37 32 25] 0 "%d")) arg)))
-(define-key python-mode-map (kbd "C-c C-p") 'ig-python-print-var)
+;; # ;;; created with autopair mode
+;; # (fset 'ig-python-print-var
+;; #    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([24 81 1 11 return 112 114 105 110 116 32 34 25 58 32 37 115 6 32 37 32 25] 0 "%d")) arg)))
+;; # (define-key python-mode-map (kbd "C-c C-p") 'ig-python-print-var)
 
 (fset 'ig-py-set-trace
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("import pdb; pdb.set_trace()" 0 "%d")) arg)))
@@ -71,8 +71,8 @@
 (add-hook 'python-mode-hook
 	  (lambda () (linum-mode)))
 
-(add-hook 'python-mode-hook
-          (lambda () (autopair-mode)))
+;; (add-hook 'python-mode-hook
+;;           (lambda () (autopair-mode)))
 
 (add-hook 'python-mode-hook
           (lambda () (show-paren-mode)))
@@ -99,5 +99,19 @@
       ))
   (add-to-list 'flymake-allowed-file-name-masks
 	       '("\\.py\\'" flymake-pyflakes-init)))
+
+
+
+;; (setq
+;;  python-shell-interpreter "ipython"
+;;  python-shell-interpreter-args ""
+;;  python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+;;  python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+;;  python-shell-completion-setup-code
+;;    "from IPython.core.completerlib import module_completion"
+;;  python-shell-completion-module-string-code
+;;    "';'.join(module_completion('''%s'''))\n"
+;;  python-shell-completion-string-code
+;;    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
 (provide 'my_python)
