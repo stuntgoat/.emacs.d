@@ -46,6 +46,8 @@
 (setq tramp-default-method "ssh")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ansi-term colors
 ;;(setq term-default-bg-color nil)
@@ -77,6 +79,19 @@
 (global-set-key (kbd "C-S-k") 'windmove-up)
 (global-set-key (kbd "C-S-h") 'windmove-left)
 (global-set-key (kbd "C-S-l") 'windmove-right)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; expand windows  NEEDS WORK since Apple Finder hijacks C-S-<down> and <up>
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; up paragraph
+(global-set-key (kbd "S-C-n") 'forward-paragraph)
+(global-set-key (kbd "S-C-p") 'backward-paragraph)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; control u to delete charbackwards; control U to delete word backwards
@@ -136,6 +151,15 @@
 (global-set-key (kbd "C-c C-d") 'ido-find-file)
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; TEMP functions
+;;(defun back-to-indentation-or-beginning () (interactive)
+  ;; (if (= (point) (progn (back-to-indentation) (point)))
+    ;;   (beginning-of-line)))
+
+;;
+
+
 ;; (require 'git)
 
 ;(require 'flymake-cursor)
@@ -166,6 +190,7 @@
  '(ido-default-buffer-method (quote selected-window))
  '(ido-default-file-method (quote selected-window))
  '(ido-enable-flex-matching t)
+ '(indent-tabs-mode nil)
  '(markdown-command "/usr/local/bin/markdown" t)
  '(menu-bar-mode nil)
  '(python-indent-guess-indent-offset t)
@@ -174,6 +199,7 @@
  '(scroll-conservatively 101)
  '(scroll-step 0)
  '(show-paren-mode t)
+ '(tab-width 4)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify)))

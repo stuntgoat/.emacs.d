@@ -64,8 +64,12 @@
     (equal MY_ENVIRONMENT "work")
     (require 'my_work))
 
-(provide 'my_reqs)
+;; Sql indent
+(load-file "~/.emacs.d/my_modes/sql_indent.el")
 
 (require 'package)
 (add-to-list 'package-archives
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(provide 'my_reqs)
+
