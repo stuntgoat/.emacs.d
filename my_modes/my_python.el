@@ -18,7 +18,7 @@
       (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("raise Exception()" 0 "%d")) arg)))
 
 (fset 'ig-py-comment-object
-   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([34 34 34 tab return tab 34 34 34 up return tab] 0 "%d")) arg)))
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([tab 34 34 34 13 tab 34 34 34 16 13 13 16 tab] 0 "%d")) arg)))
 
 (fset 'ig-python-main-statement
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([105 102 32 95 95 110 97 109 101 95 95 32 61 61 32 39 95 95 109 97 105 110 95 95 39 58 return tab] 0 "%d")) arg)))

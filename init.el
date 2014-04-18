@@ -1,3 +1,6 @@
+;; TODO:
+;; - s-c keyboard map to (ns-copy-including-secondary) if text is selected; else copy item
+
 (setq DOT_EMACS_DOT_D_DIR "~/.emacs.d")
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -16,6 +19,11 @@
 (setq load-path (append (list (expand-file-name "~/.emacs.d/")) load-path))
 (require 'my_paths)
 (require 'my_reqs)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; macros
+;; (require 'my_macros)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -23,6 +31,9 @@
 ;; TODO: - show full path of each file in the status bar
 (setq uniqueify-buffer-name-style 'reverse)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DIRED SETTINGS
+(setq dired-listing-switches "-alkh")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; FUZZY FIND FILE
@@ -152,6 +163,19 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; THING AT POINT
+;; (defun ig-copy-symbol-to-kill-ring ()
+;;   "Copy the symbol at point to the kill ring"
+;;   (interactive)
+;;   (save-excursion
+;;     ;;    (progn
+;;     (cons (symbol-at-point) kill-ring)))
+
+
+;; (global-set-key (kbd "C-c c") 'ig-copy-symbol-to-kill-ring)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; TEMP functions
 ;;(defun back-to-indentation-or-beginning () (interactive)
   ;; (if (= (point) (progn (back-to-indentation) (point)))
@@ -202,7 +226,8 @@
  '(tab-width 4)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
- '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
+ '(uniquify-buffer-name-style (quote forward) nil (uniquify))
+ '(word-wrap nil))
 
 
 (custom-set-faces

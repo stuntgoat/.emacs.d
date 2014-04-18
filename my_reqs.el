@@ -34,6 +34,7 @@
 
 (require 'line-num)
 
+(require 'thingatpt)
 
 (require 'python)
 
@@ -72,4 +73,3 @@
   '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (provide 'my_reqs)
-
