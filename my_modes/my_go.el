@@ -7,15 +7,15 @@
 ;; hooks
 (add-hook 'go-mode-hook
 	  (lambda () (setq-default indent-tabs-mode nil)))
-(add-hook 'go-mode-hook
-	  (lambda () (camelCase-mode 1)))
+
+
 (add-hook 'go-mode-hook 'linum-mode)
 (add-hook 'go-mode-hook
 	  (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
 (add-hook 'go-mode-hook
 	  (lambda () (setq tab-width 4)))
-(add-hook 'go-mode-hook
-          (lambda () (autopair-mode)))
+;; (add-hook 'go-mode-hook
+;;           (lambda () (autopair-mode)))
 (add-hook 'go-mode-hook
           (lambda () (show-paren-mode)))
 
@@ -60,5 +60,7 @@
 (define-key go-mode-map (kbd "C-c C-p") 'ig-go-Println-var)
 (define-key go-mode-map (kbd "C-c n") 'ig-go-func-search)
 
+(add-hook 'go-mode-hook
+	  (lambda () (camelCase-mode 1)))
 
 ;; go-mode

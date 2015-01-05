@@ -2,7 +2,6 @@
 ;; - s-c keyboard map to (ns-copy-including-secondary) if text is selected; else copy item
 
 (setq DOT_EMACS_DOT_D_DIR "~/.emacs.d")
-(tool-bar-mode -1)
 (menu-bar-mode -1)
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
